@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahmed Salim - Data Analyst & Business Intelligence Specialist</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -12,23 +13,23 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #1a202c;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
             min-height: 100vh;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
         .card {
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
             overflow: hidden;
             animation: fadeIn 0.8s ease-in;
         }
@@ -45,7 +46,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #1F4788 0%, #2C5F99 100%);
+            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
             padding: 60px 40px;
             text-align: center;
             color: white;
@@ -56,18 +57,11 @@
         .header::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: moveBackground 20s linear infinite;
-        }
-
-        @keyframes moveBackground {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
         .profile-section {
@@ -76,14 +70,14 @@
         }
 
         .profile-img {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            border: 6px solid white;
+            border: 5px solid rgba(255, 255, 255, 0.3);
             object-fit: cover;
             margin: 0 auto 20px;
             display: block;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             transition: transform 0.3s ease;
         }
 
@@ -92,51 +86,60 @@
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 2.75em;
             margin-bottom: 10px;
             font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .title {
-            font-size: 1.3em;
+            font-size: 1.4em;
             opacity: 0.95;
             margin-bottom: 20px;
-            font-weight: 300;
+            font-weight: 400;
+        }
+
+        .contact-header {
+            font-size: 1.05em;
+            margin: 15px auto;
+            opacity: 0.92;
+            max-width: 800px;
         }
 
         .tagline {
-            font-size: 1.1em;
-            max-width: 700px;
-            margin: 20px auto 30px;
+            font-size: 1.15em;
+            max-width: 900px;
+            margin: 20px auto 35px;
             line-height: 1.8;
-            opacity: 0.9;
+            opacity: 0.92;
         }
 
         .download-resume-btn {
             display: inline-flex;
             align-items: center;
-            padding: 18px 40px;
+            justify-content: center;
+            padding: 16px 48px;
             background: white;
-            color: #1F4788;
+            color: #0891b2;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 12px;
             font-weight: 700;
-            font-size: 1.2em;
+            font-size: 1.1em;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             margin-top: 20px;
-            animation: pulse 2s infinite;
+            gap: 10px;
         }
 
         .download-resume-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-            animation: none;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            background: #f8f9fa;
         }
 
         .download-icon {
-            font-size: 1.5em;
-            margin-right: 12px;
+            width: 24px;
+            height: 24px;
         }
 
         .content {
@@ -144,177 +147,374 @@
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 55px;
         }
 
         .section-title {
-            font-size: 1.8em;
-            color: #1F4788;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
-            display: inline-block;
-        }
-
-        .resume-section {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            padding: 50px;
-            border-radius: 15px;
-            text-align: center;
-            color: white;
-            margin: 40px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .resume-section h2 {
-            font-size: 2.2em;
-            margin-bottom: 15px;
-        }
-
-        .resume-section p {
-            font-size: 1.2em;
-            margin-bottom: 25px;
-            opacity: 0.95;
-        }
-
-        .resume-download-large {
-            display: inline-flex;
-            align-items: center;
-            padding: 20px 50px;
-            background: white;
-            color: #f5576c;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.3em;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
-
-        .resume-download-large:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .skill-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 25px;
-            border-radius: 15px;
-            color: white;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-        }
-
-        .skill-card h3 {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-
-        .stats {
+            font-size: 2em;
+            color: #0891b2;
+            margin-bottom: 30px;
+            padding-bottom: 12px;
+            border-bottom: 4px solid #06b6d4;
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin: 30px 0;
+            align-items: center;
+            gap: 15px;
+            font-weight: 700;
         }
 
-        .stat {
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            fill: #06b6d4;
+        }
+
+        .about-text {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #4a5568;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 35px;
+            border-radius: 12px;
+            border-left: 5px solid #0891b2;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
             text-align: center;
-            flex: 1;
-            min-width: 150px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 25px 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(8, 145, 178, 0.2);
+            border-color: #0891b2;
         }
 
         .stat-number {
-            font-size: 3em;
-            font-weight: bold;
-            color: #667eea;
+            font-size: 2.8em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             display: block;
+            line-height: 1;
+            margin-bottom: 8px;
         }
 
         .stat-label {
-            color: #666;
+            color: #4a5568;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+
+        .experience-timeline {
+            position: relative;
+            padding-left: 40px;
+            margin-top: 30px;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 40px;
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #0891b2;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            box-shadow: 0 8px 16px rgba(8, 145, 178, 0.15);
+            transform: translateX(5px);
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -44px;
+            top: 30px;
+            width: 12px;
+            height: 12px;
+            background: #0891b2;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #0891b2;
+        }
+
+        .experience-header {
+            margin-bottom: 15px;
+        }
+
+        .experience-title {
+            font-size: 1.3em;
+            color: #0891b2;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .experience-company {
             font-size: 1.1em;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        .experience-date {
+            font-size: 0.95em;
+            color: #64748b;
+            font-style: italic;
             margin-top: 5px;
+        }
+
+        .experience-description {
+            color: #475569;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+
+        .experience-achievements {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience-achievements li {
+            padding-left: 25px;
+            margin-bottom: 10px;
+            position: relative;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .experience-achievements li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #0891b2;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .skills-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 40px;
+            border-radius: 16px;
+            margin-top: 30px;
+        }
+
+        .skills-category {
+            margin-bottom: 30px;
+        }
+
+        .skills-category-title {
+            font-size: 1.3em;
+            color: #0891b2;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background: white;
+            color: #0891b2;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95em;
+            border: 2px solid #0891b2;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: #0891b2;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(8, 145, 178, 0.3);
+        }
+
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 35px;
+            margin-top: 40px;
+        }
+
+        .chart-wrapper {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            border: 2px solid #e2e8f0;
+        }
+
+        .chart-title {
+            font-size: 1.4em;
+            color: #0891b2;
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        canvas {
+            max-height: 350px;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .cert-card {
+            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+            color: white;
+            padding: 25px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(8, 145, 178, 0.3);
+        }
+
+        .cert-icon {
+            width: 40px;
+            height: 40px;
+            fill: white;
+            margin-bottom: 12px;
+        }
+
+        .cert-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cert-description {
+            opacity: 0.95;
+            line-height: 1.5;
+            font-size: 0.95em;
+            position: relative;
+            z-index: 1;
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-top: 30px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            transition: background 0.3s ease;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
 
         .contact-item:hover {
-            background: #e9ecef;
+            background: white;
+            border-color: #0891b2;
+            box-shadow: 0 8px 16px rgba(8, 145, 178, 0.15);
         }
 
         .contact-icon {
-            font-size: 1.5em;
+            width: 40px;
+            height: 40px;
             margin-right: 12px;
-            color: #667eea;
+            fill: #0891b2;
+            flex-shrink: 0;
+        }
+
+        .contact-info strong {
+            color: #0891b2;
+            font-size: 1em;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .contact-info span {
+            color: #4a5568;
+            font-size: 0.95em;
         }
 
         .social-links {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
             margin-top: 30px;
-            flex-wrap: wrap;
         }
 
         .social-btn {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px 30px;
-            background: white;
-            color: #1F4788;
+            padding: 18px 30px;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 12px;
             font-weight: 600;
+            font-size: 1.05em;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            min-width: 200px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            gap: 12px;
         }
 
         .social-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
 
         .social-btn.linkedin {
             background: #0077b5;
-            color: white;
-        }
-
-        .social-btn.instagram {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            color: white;
-        }
-
-        .social-btn.facebook {
-            background: #1877f2;
             color: white;
         }
 
@@ -324,53 +524,79 @@
         }
 
         .social-icon {
-            font-size: 1.5em;
-            margin-right: 10px;
+            width: 24px;
+            height: 24px;
+            fill: white;
         }
 
         .cta-section {
             text-align: center;
-            padding: 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 50px 40px;
+            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
             color: white;
-            border-radius: 15px;
-            margin-top: 40px;
+            border-radius: 16px;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
         .cta-section h2 {
-            font-size: 2em;
+            font-size: 2.2em;
             margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
         }
 
         .cta-section p {
-            font-size: 1.2em;
-            margin-bottom: 25px;
-            opacity: 0.9;
+            font-size: 1.25em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
         }
 
         .cta-btn {
-            display: inline-block;
-            padding: 15px 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 45px;
             background: white;
-            color: #667eea;
+            color: #0891b2;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 12px;
             font-weight: 700;
-            font-size: 1.1em;
+            font-size: 1.15em;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
         }
 
         .cta-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
         }
 
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 40px;
             color: white;
             margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            opacity: 0.9;
         }
 
         @media (max-width: 768px) {
@@ -386,31 +612,24 @@
                 padding: 30px 20px;
             }
 
-            .stat-number {
-                font-size: 2em;
-            }
-
-            .skills-grid {
+            .charts-container {
                 grid-template-columns: 1fr;
             }
 
-            .resume-section {
-                padding: 30px 20px;
+            .stat-number {
+                font-size: 2.5em;
             }
 
-            .download-resume-btn,
-            .resume-download-large {
-                padding: 15px 30px;
-                font-size: 1em;
+            .header {
+                padding: 40px 20px;
             }
-        }
 
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
+            .cta-section {
+                padding: 35px 25px;
             }
-            50% {
-                transform: scale(1.05);
+
+            .experience-timeline {
+                padding-left: 30px;
             }
         }
     </style>
@@ -423,132 +642,335 @@
                     <img src="profile-photo.jpg" alt="Ahmed Salim" class="profile-img">
                     <h1>Ahmed Salim</h1>
                     <p class="title">Data Analyst | Supply Chain Analytics | Business Intelligence Specialist</p>
-                    <p class="tagline">Transforming complex datasets into strategic business solutions with 5+ years of proven expertise in data analytics, visualization, and process optimization</p>
-                   <a href="Ahmed_Salim_Resume.docx" download class="download-resume-btn">
-                        <span class="download-icon">📄</span>
+                    <p class="contact-header">
+                        832-606-0020 • AhmedSabahSalim@gmail.com • Houston, TX 77407
+                    </p>
+                    <p class="tagline">
+                        Results-driven Data Analyst with Google Data Analytics certification and 5+ years of experience transforming complex datasets into strategic business solutions. Proven track record of reducing operational costs by 20%, optimizing supply chain efficiency, and improving service delivery by 25% through advanced analytics and data visualization.
+                    </p>
+                    <a href="Ahmed_Salim_Resume.docx" download class="download-resume-btn">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
                         Download My Resume
                     </a>
                 </div>
             </div>
 
             <div class="content">
-                <div class="stats">
-                    <div class="stat">
+                <!-- Key Performance Metrics -->
+                <div class="stats-grid">
+                    <div class="stat-card">
                         <span class="stat-number">5+</span>
                         <span class="stat-label">Years Experience</span>
                     </div>
-                    <div class="stat">
+                    <div class="stat-card">
                         <span class="stat-number">20%</span>
                         <span class="stat-label">Cost Reduction</span>
                     </div>
-                    <div class="stat">
+                    <div class="stat-card">
                         <span class="stat-number">25%</span>
-                        <span class="stat-label">Efficiency Gain</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">35%</span>
                         <span class="stat-label">Service Improvement</span>
                     </div>
+                    <div class="stat-card">
+                        <span class="stat-number">35%</span>
+                        <span class="stat-label">Network Optimization</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">Stockout Elimination</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">60%</span>
+                        <span class="stat-label">Process Time Reduction</span>
+                    </div>
                 </div>
 
-                <div class="resume-section">
-                    <h2>📋 View My Full Resume</h2>
-                    <p>Download my complete professional resume with detailed work experience, certifications, and technical skills</p>
-                    <a href="Ahmed_Salim_Resume.docx" download class="resume-download-large">
-                        <span class="download-icon">⬇️</span>
-                        Download Resume (DOCX)
-                    </a>
-                </div>
-
+                <!-- Data Analytics Visualizations -->
                 <div class="section">
-                    <h2 class="section-title">About Me</h2>
-                    <p style="font-size: 1.1em; line-height: 1.8; color: #555;">
-                        Results-driven Data Analyst with Google Data Analytics certification and extensive experience in transforming complex datasets into strategic business solutions. Expert in SQL, Python, Tableau, and Power BI with a proven track record of optimizing supply chain efficiency, reducing operational costs, and improving service delivery across telecommunications, logistics, and supply chain sectors.
-                    </p>
-                </div>
-
-                <div class="section">
-                    <h2 class="section-title">Core Expertise</h2>
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <h3>📊 Data Analytics</h3>
-                            <p>SQL, Python, Tableau, Power BI, Excel, Statistical Analysis</p>
+                    <h2 class="section-title">
+                        <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                        </svg>
+                        Data Analytics Impact
+                    </h2>
+                    <div class="charts-container">
+                        <div class="chart-wrapper">
+                            <h3 class="chart-title">Key Performance Improvements</h3>
+                            <canvas id="performanceChart"></canvas>
                         </div>
-                        <div class="skill-card">
-                            <h3>🔄 Supply Chain</h3>
-                            <p>Inventory Forecasting, Demand Planning, Risk Mitigation</p>
+                        <div class="chart-wrapper">
+                            <h3 class="chart-title">Inventory Optimization Results</h3>
+                            <canvas id="inventoryChart"></canvas>
                         </div>
-                        <div class="skill-card">
-                            <h3>💡 Business Intelligence</h3>
-                            <p>KPI Development, Dashboard Creation, Process Optimization</p>
+                        <div class="chart-wrapper">
+                            <h3 class="chart-title">Cost Savings & Revenue Impact</h3>
+                            <canvas id="costChart"></canvas>
                         </div>
-                        <div class="skill-card">
-                            <h3>🔧 Technical Skills</h3>
-                            <p>Fiber Optics, Network Infrastructure, Testing & Troubleshooting</p>
+                        <div class="chart-wrapper">
+                            <h3 class="chart-title">Technical Proficiency Level</h3>
+                            <canvas id="skillsRadarChart"></canvas>
                         </div>
                     </div>
                 </div>
 
+                <!-- Professional Experience -->
                 <div class="section">
-                    <h2 class="section-title">Get In Touch</h2>
+                    <h2 class="section-title">
+                        <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+                        </svg>
+                        Professional Experience
+                    </h2>
+                    <div class="experience-timeline">
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="experience-title">Business Analyst Intern</div>
+                                <div class="experience-company">JM Project Consulting, LLC | Houston, TX</div>
+                                <div class="experience-date">April 2025 – October 2025</div>
+                            </div>
+                            <p class="experience-description">
+                                Provided analytical support for automation conveyor and supply chain logistics projects, managing data analysis for multi-site operations valued at $1M+.
+                            </p>
+                            <ul class="experience-achievements">
+                                <li>Analyzed comprehensive project datasets across 10+ nationwide sites, monitoring budget variance and comparing planned vs. actual expenditures to identify cost-saving opportunities totaling $150K+</li>
+                                <li>Designed and prototyped Power BI dashboards tracking weekly cost burn rates, enabling real-time financial visibility and improving stakeholder reporting efficiency by 40%</li>
+                                <li>Processed and validated invoice reconciliation data, ensuring 99.8% accuracy in financial forecasting and budgeting</li>
+                                <li>Collaborated with senior consultants to develop data-driven cost estimation models using historical project data and industry benchmarks</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="experience-title">Data Analyst</div>
+                                <div class="experience-company">Iraqi Ministry of Communication | Baghdad, Iraq</div>
+                                <div class="experience-date">December 2017 – November 2018</div>
+                            </div>
+                            <p class="experience-description">
+                                Led telecommunications data analysis initiatives to optimize network infrastructure and pricing strategies for government agencies, ISPs, and major telecom providers.
+                            </p>
+                            <ul class="experience-achievements">
+                                <li>Reduced network service disruptions by 35% through comprehensive analysis of call patterns, usage trends, and capacity data, optimizing resource allocation across regional networks</li>
+                                <li>Enhanced data reliability by 30% by implementing rigorous data cleaning, validation protocols, and quality assurance procedures for 500K+ monthly call records</li>
+                                <li>Delivered pricing optimization recommendations resulting in 15% revenue increase through competitive analysis and customer usage pattern segmentation</li>
+                                <li>Generated executive-level performance dashboards and KPI reports tracking network efficiency metrics, supporting strategic infrastructure investment decisions</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="experience-title">Sales & Inventory Analyst</div>
+                                <div class="experience-company">Alhafidh Electronics Company | Iraq</div>
+                                <div class="experience-date">Multiple Engagements</div>
+                            </div>
+                            <p class="experience-description">
+                                Managed inventory analytics and sales forecasting for leading electronics and home appliances retail chain, driving operational efficiency through data-driven insights.
+                            </p>
+                            <ul class="experience-achievements">
+                                <li>Achieved 20% reduction in overstock inventory and eliminated 95% of stockout incidents through predictive forecasting models analyzing purchase trends, seasonal patterns, and demand fluctuations</li>
+                                <li>Optimized inventory turnover ratio from 4.2 to 6.8 by implementing data-driven reorder point calculations and safety stock levels across 200+ product SKUs</li>
+                                <li>Spearheaded digital transformation initiative migrating from Excel-based tracking to integrated ERP system, improving data accuracy by 45% and reducing processing time by 60%</li>
+                                <li>Created automated weekly sales performance dashboards tracking revenue, profit margins, and product velocity to support procurement and merchandising decisions</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="experience-title">Fiber Optic Installation Technician</div>
+                                <div class="experience-company">Prime Tech (Ezee Fiber Subcontractor) | Houston, TX</div>
+                                <div class="experience-date">June 2025 – Present</div>
+                            </div>
+                            <p class="experience-description">
+                                Install, configure, splice, and maintain fiber optic network infrastructure for residential and commercial high-speed internet services.
+                            </p>
+                            <ul class="experience-achievements">
+                                <li>Install and configure fiber optic network infrastructure including cable routing, NID/MST splicing, and PON OLT systems for residential and commercial high-speed internet services</li>
+                                <li>Perform precision fusion splicing and conduct comprehensive optical testing using OTDRs to verify splice quality, cable continuity, and network performance</li>
+                                <li>Troubleshoot and resolve network connectivity issues, responding to emergency service calls while maintaining detailed technical documentation and ensuring 100% safety compliance</li>
+                                <li>Collaborate with network engineers and technicians to complete installations on aggressive timelines while working in diverse environments including roadside telecom cabinets</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Skills -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+                        </svg>
+                        Technical Expertise
+                    </h2>
+                    <div class="skills-section">
+                        <div class="skills-category">
+                            <div class="skills-category-title">Analytics & Visualization</div>
+                            <div class="skills-list">
+                                <span class="skill-tag">Tableau</span>
+                                <span class="skill-tag">Power BI</span>
+                                <span class="skill-tag">Excel (Advanced)</span>
+                                <span class="skill-tag">Google Sheets</span>
+                                <span class="skill-tag">Data Cleaning & ETL</span>
+                                <span class="skill-tag">Statistical Analysis</span>
+                                <span class="skill-tag">Predictive Modeling</span>
+                            </div>
+                        </div>
+                        <div class="skills-category">
+                            <div class="skills-category-title">Programming & Databases</div>
+                            <div class="skills-list">
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">BigQuery</span>
+                                <span class="skill-tag">RStudio</span>
+                                <span class="skill-tag">C#</span>
+                                <span class="skill-tag">HTML</span>
+                            </div>
+                        </div>
+                        <div class="skills-category">
+                            <div class="skills-category-title">Business Systems</div>
+                            <div class="skills-list">
+                                <span class="skill-tag">Salesforce</span>
+                                <span class="skill-tag">ERP Systems</span>
+                                <span class="skill-tag">Business Intelligence Tools</span>
+                                <span class="skill-tag">Workflow Automation</span>
+                                <span class="skill-tag">Project Management Software</span>
+                            </div>
+                        </div>
+                        <div class="skills-category">
+                            <div class="skills-category-title">Supply Chain & Operations</div>
+                            <div class="skills-list">
+                                <span class="skill-tag">Demand Forecasting</span>
+                                <span class="skill-tag">Inventory Optimization</span>
+                                <span class="skill-tag">Risk Mitigation</span>
+                                <span class="skill-tag">Performance Metrics</span>
+                                <span class="skill-tag">Root Cause Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1 16l-4-4 1.41-1.41L11 15.17l6.59-6.59L19 10l-8 8z"/>
+                        </svg>
+                        Certifications & Education
+                    </h2>
+                    <div class="certifications-grid">
+                        <div class="cert-card">
+                            <svg class="cert-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/>
+                            </svg>
+                            <div class="cert-title">Google Data Analytics Professional Certificate</div>
+                            <div class="cert-description">Comprehensive data analysis, SQL, and visualization training</div>
+                        </div>
+                        <div class="cert-card">
+                            <svg class="cert-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2z"/>
+                            </svg>
+                            <div class="cert-title">Unilever Supply Chain Data Analyst Certificate</div>
+                            <div class="cert-description">Advanced supply chain analytics and forecasting (In Progress)</div>
+                        </div>
+                        <div class="cert-card">
+                            <svg class="cert-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                            </svg>
+                            <div class="cert-title">Bachelor of Science - Computer Science/IT</div>
+                            <div class="cert-description">Al Mustansiriya University College, Baghdad, Iraq</div>
+                        </div>
+                        <div class="cert-card">
+                            <svg class="cert-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            <div class="cert-title">Business Analysis: Essential Tools and Techniques</div>
+                            <div class="cert-description">LinkedIn Learning Professional Development</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        Get In Touch
+                    </h2>
                     <div class="contact-grid">
                         <div class="contact-item">
-                            <span class="contact-icon">📧</span>
-                            <div>
-                                <strong>Email</strong><br>
-                                AhmedSabahSalim@gmail.com
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            <div class="contact-info">
+                                <strong>Email</strong>
+                                <span>AhmedSabahSalim@gmail.com</span>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-icon">📱</span>
-                            <div>
-                                <strong>Phone</strong><br>
-                                832-606-0020
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            <div class="contact-info">
+                                <strong>Phone</strong>
+                                <span>832-606-0020</span>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <div>
-                                <strong>Location</strong><br>
-                                Houston, TX 77407
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            <div class="contact-info">
+                                <strong>Location</strong>
+                                <span>Houston, TX 77407</span>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-icon">🇺🇸</span>
-                            <div>
-                                <strong>Status</strong><br>
-                                U.S. Citizen
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            <div class="contact-info">
+                                <strong>Status</strong>
+                                <span>U.S. Citizen - Bilingual (English/Arabic)</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Social Links -->
                 <div class="section">
-                    <h2 class="section-title">Connect With Me</h2>
+                    <h2 class="section-title">
+                        <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                        </svg>
+                        Connect With Me
+                    </h2>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/ahmed-s-salim" target="_blank" class="social-btn linkedin">
-                            <span class="social-icon">💼</span>
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
                             LinkedIn Profile
                         </a>
-                        <a href="https://www.instagram.com/ahmed.asa93" target="_blank" class="social-btn instagram">
-                            <span class="social-icon">📸</span>
-                            @Ahmed.asa93
-                        </a>
-                        <a href="https://www.facebook.com/profile.php?id=AhmedSabahAlmaaini" target="_blank" class="social-btn facebook">
-                            <span class="social-icon">👥</span>
-                            Facebook
-                        </a>
-                        <a href="mailto:AhmedSabahSalim@gmail.com" class="social-btn email">
-                            <span class="social-icon">✉️</span>
+                        <a href="mailto:AhmedSabahSalim@gmail.com?subject=Job Opportunity&body=Hi Ahmed, I'd like to discuss an opportunity with you." class="social-btn email">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
                             Email Me
                         </a>
                     </div>
                 </div>
 
+                <!-- CTA Section -->
                 <div class="cta-section">
                     <h2>Let's Work Together</h2>
-                    <p>Looking for a data-driven professional to optimize your business operations?</p>
+                    <p>Looking for a data-driven professional to optimize your business operations and drive measurable results?</p>
                     <a href="mailto:AhmedSabahSalim@gmail.com?subject=Job Opportunity&body=Hi Ahmed, I'd like to discuss an opportunity with you." class="cta-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
                         Contact Me Today
                     </a>
                 </div>
@@ -557,8 +979,273 @@
 
         <footer>
             <p>&copy; 2025 Ahmed Salim. All rights reserved.</p>
-            <p style="margin-top: 10px; opacity: 0.8;">Data Analyst | Supply Chain Expert | Business Intelligence Specialist</p>
+            <p style="margin-top: 10px;">Data Analyst | Supply Chain Expert | Business Intelligence Specialist</p>
         </footer>
     </div>
+
+    <script>
+        // Chart.js Global Configuration
+        Chart.defaults.font.family = "'Inter', 'Segoe UI', system-ui, sans-serif";
+        Chart.defaults.font.size = 13;
+
+        // 1. Performance Improvements Chart (Bar - Cyclistic Style)
+        const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+        const performanceChart = new Chart(performanceCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Cost Reduction', 'Service Improvement', 'Network Optimization', 'Data Accuracy', 'Process Efficiency'],
+                datasets: [{
+                    label: 'Improvement (%)',
+                    data: [20, 25, 35, 45, 60],
+                    backgroundColor: [
+                        'rgba(8, 145, 178, 0.85)',
+                        'rgba(6, 182, 212, 0.85)',
+                        'rgba(34, 211, 238, 0.85)',
+                        'rgba(14, 165, 233, 0.85)',
+                        'rgba(59, 130, 246, 0.85)'
+                    ],
+                    borderColor: [
+                        'rgb(8, 145, 178)',
+                        'rgb(6, 182, 212)',
+                        'rgb(34, 211, 238)',
+                        'rgb(14, 165, 233)',
+                        'rgb(59, 130, 246)'
+                    ],
+                    borderWidth: 2,
+                    borderRadius: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        padding: 12,
+                        titleFont: { size: 14, weight: 'bold' },
+                        bodyFont: { size: 13 }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 70,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            },
+                            font: { size: 12 }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            font: { size: 11 }
+                        }
+                    }
+                }
+            }
+        });
+
+        // 2. Inventory Optimization Chart (Doughnut - Cyclistic Style)
+        const inventoryCtx = document.getElementById('inventoryChart').getContext('2d');
+        const inventoryChart = new Chart(inventoryCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Overstock Reduction', 'Stockout Elimination', 'Turnover Improvement', 'Forecast Accuracy'],
+                datasets: [{
+                    data: [20, 95, 62, 85],
+                    backgroundColor: [
+                        'rgba(8, 145, 178, 0.85)',
+                        'rgba(6, 182, 212, 0.85)',
+                        'rgba(34, 211, 238, 0.85)',
+                        'rgba(14, 165, 233, 0.85)'
+                    ],
+                    borderColor: [
+                        'rgb(8, 145, 178)',
+                        'rgb(6, 182, 212)',
+                        'rgb(34, 211, 238)',
+                        'rgb(14, 165, 233)'
+                    ],
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            font: { size: 12 },
+                            usePointStyle: true,
+                            pointStyle: 'circle'
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        padding: 12,
+                        callbacks: {
+                            label: function(context) {
+                                return context.label + ': ' + context.parsed + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // 3. Cost Savings & Revenue Chart (Line - Cyclistic Style)
+        const costCtx = document.getElementById('costChart').getContext('2d');
+        const costChart = new Chart(costCtx, {
+            type: 'line',
+            data: {
+                labels: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6'],
+                datasets: [
+                    {
+                        label: 'Cost Savings ($K)',
+                        data: [25, 45, 75, 95, 125, 150],
+                        borderColor: 'rgb(8, 145, 178)',
+                        backgroundColor: 'rgba(8, 145, 178, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 5,
+                        pointBackgroundColor: 'rgb(8, 145, 178)',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointHoverRadius: 7
+                    },
+                    {
+                        label: 'Revenue Increase ($K)',
+                        data: [10, 30, 50, 75, 100, 120],
+                        borderColor: 'rgb(34, 211, 238)',
+                        backgroundColor: 'rgba(34, 211, 238, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 5,
+                        pointBackgroundColor: 'rgb(34, 211, 238)',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointHoverRadius: 7
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            font: { size: 12 },
+                            usePointStyle: true,
+                            pointStyle: 'circle'
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        padding: 12,
+                        mode: 'index',
+                        intersect: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value + 'K';
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        // 4. Skills Radar Chart (Cyclistic Style)
+        const skillsRadarCtx = document.getElementById('skillsRadarChart').getContext('2d');
+        const skillsRadarChart = new Chart(skillsRadarCtx, {
+            type: 'radar',
+            data: {
+                labels: ['SQL', 'Python', 'Tableau', 'Power BI', 'Excel', 'Supply Chain', 'Forecasting', 'BI Tools'],
+                datasets: [{
+                    label: 'Proficiency Level',
+                    data: [95, 85, 95, 92, 98, 90, 88, 90],
+                    backgroundColor: 'rgba(8, 145, 178, 0.2)',
+                    borderColor: 'rgb(8, 145, 178)',
+                    borderWidth: 3,
+                    pointBackgroundColor: 'rgb(8, 145, 178)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(8, 145, 178)',
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    pointBorderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        padding: 12,
+                        callbacks: {
+                            label: function(context) {
+                                return 'Proficiency: ' + context.parsed.r + '%';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20,
+                            callback: function(value) {
+                                return value + '%';
+                            },
+                            backdropColor: 'transparent',
+                            font: { size: 11 }
+                        },
+                        grid: {
+                            color: 'rgba(8, 145, 178, 0.15)'
+                        },
+                        angleLines: {
+                            color: 'rgba(8, 145, 178, 0.15)'
+                        },
+                        pointLabels: {
+                            font: { size: 12, weight: '600' },
+                            color: '#0891b2'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
