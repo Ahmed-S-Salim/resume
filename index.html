@@ -403,6 +403,137 @@
             height: auto !important;
         }
 
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: hsl(220, 15%, 18%);
+            border-radius: 16px;
+            padding: 30px;
+            border: 2px solid hsl(220, 10%, 25%);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, hsl(100, 70%, 45%), hsl(100, 70%, 65%));
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(143, 209, 79, 0.25);
+            border-color: hsl(100, 70%, 55%);
+        }
+
+        .project-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, hsl(100, 70%, 45%), hsl(100, 70%, 55%));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .project-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: hsl(100, 70%, 15%);
+        }
+
+        .project-title {
+            font-size: 1.4em;
+            color: hsl(100, 70%, 55%);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .project-description {
+            color: hsl(220, 10%, 70%);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .project-tag {
+            background: hsl(220, 15%, 12%, 0.6);
+            color: hsl(100, 70%, 55%);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            border: 1px solid hsl(220, 10%, 25%);
+        }
+
+        .project-highlights {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .project-highlights li {
+            padding-left: 22px;
+            margin-bottom: 8px;
+            position: relative;
+            color: hsl(220, 10%, 70%);
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .project-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: hsl(100, 70%, 55%);
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: hsl(100, 70%, 55%);
+            color: hsl(100, 70%, 15%);
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: hsl(100, 70%, 45%);
+            transform: translateX(5px);
+        }
+
+        .project-link svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
         .certifications-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -880,6 +1011,48 @@
                                 <span class="skill-tag">Performance Metrics</span>
                                 <span class="skill-tag">Root Cause Analysis</span>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Projects -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-1 12H5c-.55 0-1-.45-1-1V9c0-.55.45-1 1-1h14c.55 0 1 .45 1 1v8c0 .55-.45 1-1 1z"/>
+                        </svg>
+                        Portfolio Projects
+                    </h2>
+                    <div class="projects-grid">
+                        <div class="project-card" onclick="window.location.href='cyclistic-dashboard.html'">
+                            <div class="project-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                                </svg>
+                            </div>
+                            <h3 class="project-title">Cyclistic Bike-Share Analysis</h3>
+                            <p class="project-description">
+                                End-to-end data analytics capstone project analyzing 5M+ bike-share rides to identify usage patterns between casual riders and annual members, driving data-driven marketing strategies.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">R</span>
+                                <span class="project-tag">Tidyverse</span>
+                                <span class="project-tag">Power BI</span>
+                                <span class="project-tag">Data Wrangling</span>
+                                <span class="project-tag">Visualization</span>
+                            </div>
+                            <ul class="project-highlights">
+                                <li>Processed 5M+ records across 12 months of bike-share data</li>
+                                <li>Identified key behavioral differences driving membership conversions</li>
+                                <li>Built interactive Power BI dashboard with actionable insights</li>
+                                <li>Delivered strategic recommendations for marketing campaigns</li>
+                            </ul>
+                            <a href="cyclistic-dashboard.html" class="project-link">
+                                View Dashboard
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
