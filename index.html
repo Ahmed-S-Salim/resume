@@ -15,8 +15,8 @@
         body {
             font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
-            color: #1a202c;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+            color: #e5e7eb;
+            background: hsl(220, 15%, 10%);
             min-height: 100vh;
         }
 
@@ -27,11 +27,12 @@
         }
 
         .card {
-            background: white;
+            background: hsl(220, 15%, 15%);
             border-radius: 24px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
             overflow: hidden;
             animation: fadeIn 0.8s ease-in;
+            border: 1px solid hsl(220, 10%, 25%);
         }
 
         @keyframes fadeIn {
@@ -46,10 +47,10 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
+            background: linear-gradient(135deg, hsl(100, 70%, 45%) 0%, hsl(100, 70%, 55%) 50%, hsl(100, 70%, 65%) 100%);
             padding: 60px 40px;
             text-align: center;
-            color: white;
+            color: hsl(100, 70%, 15%);
             position: relative;
             overflow: hidden;
         }
@@ -119,8 +120,8 @@
             align-items: center;
             justify-content: center;
             padding: 16px 48px;
-            background: white;
-            color: #0891b2;
+            background: hsl(220, 15%, 15%);
+            color: hsl(100, 70%, 55%);
             text-decoration: none;
             border-radius: 12px;
             font-weight: 700;
@@ -129,12 +130,14 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             margin-top: 20px;
             gap: 10px;
+            border: 2px solid hsl(100, 70%, 55%);
         }
 
         .download-resume-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-            background: #f8f9fa;
+            box-shadow: 0 15px 40px rgba(143, 209, 79, 0.4);
+            background: hsl(100, 70%, 55%);
+            color: hsl(100, 70%, 15%);
         }
 
         .download-icon {
@@ -152,10 +155,10 @@
 
         .section-title {
             font-size: 2em;
-            color: #0891b2;
+            color: hsl(100, 70%, 55%);
             margin-bottom: 30px;
             padding-bottom: 12px;
-            border-bottom: 4px solid #06b6d4;
+            border-bottom: 4px solid hsl(100, 70%, 55%);
             display: flex;
             align-items: center;
             gap: 15px;
@@ -165,17 +168,18 @@
         .section-icon {
             width: 36px;
             height: 36px;
-            fill: #06b6d4;
+            fill: hsl(100, 70%, 55%);
         }
 
         .about-text {
             font-size: 1.15em;
             line-height: 1.9;
-            color: #4a5568;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            color: hsl(220, 10%, 70%);
+            background: hsl(220, 15%, 12%, 0.6);
             padding: 35px;
             border-radius: 12px;
-            border-left: 5px solid #0891b2;
+            border-left: 5px solid hsl(100, 70%, 55%);
+            border: 1px solid hsl(220, 10%, 25%);
         }
 
         .stats-grid {
@@ -187,24 +191,24 @@
 
         .stat-card {
             text-align: center;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            background: hsl(220, 15%, 12%, 0.6);
             padding: 25px 15px;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.07);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid transparent;
+            border: 2px solid hsl(220, 10%, 25%);
         }
 
         .stat-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(8, 145, 178, 0.2);
-            border-color: #0891b2;
+            box-shadow: 0 12px 24px rgba(143, 209, 79, 0.2);
+            border-color: hsl(100, 70%, 55%);
         }
 
         .stat-number {
             font-size: 2.8em;
             font-weight: 800;
-            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+            background: linear-gradient(135deg, hsl(100, 70%, 45%) 0%, hsl(100, 70%, 65%) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -214,7 +218,7 @@
         }
 
         .stat-label {
-            color: #4a5568;
+            color: hsl(220, 10%, 70%);
             font-size: 0.95em;
             font-weight: 600;
             margin-top: 6px;
@@ -233,21 +237,22 @@
             top: 0;
             bottom: 0;
             width: 3px;
-            background: linear-gradient(180deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
+            background: linear-gradient(180deg, hsl(100, 70%, 45%) 0%, hsl(100, 70%, 55%) 50%, hsl(100, 70%, 65%) 100%);
         }
 
         .experience-item {
             position: relative;
             margin-bottom: 40px;
-            background: #f8fafc;
+            background: hsl(220, 15%, 18%);
             padding: 25px;
             border-radius: 12px;
-            border-left: 4px solid #0891b2;
+            border-left: 4px solid hsl(100, 70%, 55%);
             transition: all 0.3s ease;
+            border: 1px solid hsl(220, 10%, 25%);
         }
 
         .experience-item:hover {
-            box-shadow: 0 8px 16px rgba(8, 145, 178, 0.15);
+            box-shadow: 0 8px 16px rgba(143, 209, 79, 0.15);
             transform: translateX(5px);
         }
 
@@ -258,10 +263,10 @@
             top: 30px;
             width: 12px;
             height: 12px;
-            background: #0891b2;
+            background: hsl(100, 70%, 55%);
             border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px #0891b2;
+            border: 3px solid hsl(220, 15%, 15%);
+            box-shadow: 0 0 0 3px hsl(100, 70%, 55%);
         }
 
         .experience-header {
@@ -270,26 +275,26 @@
 
         .experience-title {
             font-size: 1.3em;
-            color: #0891b2;
+            color: hsl(100, 70%, 55%);
             font-weight: 700;
             margin-bottom: 5px;
         }
 
         .experience-company {
             font-size: 1.1em;
-            color: #475569;
+            color: hsl(220, 10%, 70%);
             font-weight: 600;
         }
 
         .experience-date {
             font-size: 0.95em;
-            color: #64748b;
+            color: hsl(220, 10%, 65%);
             font-style: italic;
             margin-top: 5px;
         }
 
         .experience-description {
-            color: #475569;
+            color: hsl(220, 10%, 70%);
             margin: 15px 0;
             line-height: 1.8;
         }
@@ -303,7 +308,7 @@
             padding-left: 25px;
             margin-bottom: 10px;
             position: relative;
-            color: #475569;
+            color: hsl(220, 10%, 70%);
             line-height: 1.7;
         }
 
@@ -311,16 +316,17 @@
             content: '▸';
             position: absolute;
             left: 0;
-            color: #0891b2;
+            color: hsl(100, 70%, 55%);
             font-weight: bold;
             font-size: 1.2em;
         }
 
         .skills-section {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            background: hsl(220, 15%, 12%, 0.6);
             padding: 40px;
             border-radius: 16px;
             margin-top: 30px;
+            border: 1px solid hsl(220, 10%, 25%);
         }
 
         .skills-category {
@@ -329,7 +335,7 @@
 
         .skills-category-title {
             font-size: 1.3em;
-            color: #0891b2;
+            color: hsl(100, 70%, 55%);
             font-weight: 700;
             margin-bottom: 15px;
             display: flex;
@@ -344,21 +350,21 @@
         }
 
         .skill-tag {
-            background: white;
-            color: #0891b2;
+            background: hsl(220, 15%, 18%);
+            color: hsl(100, 70%, 55%);
             padding: 10px 20px;
             border-radius: 25px;
             font-weight: 600;
             font-size: 0.95em;
-            border: 2px solid #0891b2;
+            border: 2px solid hsl(100, 70%, 55%);
             transition: all 0.3s ease;
         }
 
         .skill-tag:hover {
-            background: #0891b2;
-            color: white;
+            background: hsl(100, 70%, 55%);
+            color: hsl(100, 70%, 15%);
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(8, 145, 178, 0.3);
+            box-shadow: 0 4px 8px rgba(143, 209, 79, 0.3);
         }
 
         .charts-container {
@@ -369,16 +375,16 @@
         }
 
         .chart-wrapper {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            background: hsl(220, 15%, 18%);
             padding: 35px;
             border-radius: 16px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-            border: 2px solid #e2e8f0;
+            border: 2px solid hsl(220, 10%, 25%);
         }
 
         .chart-title {
             font-size: 1.4em;
-            color: #0891b2;
+            color: hsl(100, 70%, 55%);
             margin-bottom: 25px;
             font-weight: 700;
             text-align: center;
@@ -396,8 +402,8 @@
         }
 
         .cert-card {
-            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
-            color: white;
+            background: linear-gradient(135deg, hsl(100, 70%, 45%) 0%, hsl(100, 70%, 55%) 100%);
+            color: hsl(100, 70%, 15%);
             padding: 25px 20px;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -418,13 +424,13 @@
 
         .cert-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(8, 145, 178, 0.3);
+            box-shadow: 0 12px 24px rgba(143, 209, 79, 0.3);
         }
 
         .cert-icon {
             width: 40px;
             height: 40px;
-            fill: white;
+            fill: hsl(100, 70%, 15%);
             margin-bottom: 12px;
         }
 
@@ -455,35 +461,35 @@
             display: flex;
             align-items: center;
             padding: 20px;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            background: hsl(220, 15%, 12%, 0.6);
             border-radius: 12px;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: 2px solid hsl(220, 10%, 25%);
         }
 
         .contact-item:hover {
-            background: white;
-            border-color: #0891b2;
-            box-shadow: 0 8px 16px rgba(8, 145, 178, 0.15);
+            background: hsl(220, 15%, 18%);
+            border-color: hsl(100, 70%, 55%);
+            box-shadow: 0 8px 16px rgba(143, 209, 79, 0.15);
         }
 
         .contact-icon {
             width: 40px;
             height: 40px;
             margin-right: 12px;
-            fill: #0891b2;
+            fill: hsl(100, 70%, 55%);
             flex-shrink: 0;
         }
 
         .contact-info strong {
-            color: #0891b2;
+            color: hsl(100, 70%, 55%);
             font-size: 1em;
             display: block;
             margin-bottom: 4px;
         }
 
         .contact-info span {
-            color: #4a5568;
+            color: hsl(220, 10%, 70%);
             font-size: 0.95em;
         }
 
@@ -532,8 +538,8 @@
         .cta-section {
             text-align: center;
             padding: 50px 40px;
-            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
-            color: white;
+            background: linear-gradient(135deg, hsl(100, 70%, 45%) 0%, hsl(100, 70%, 55%) 100%);
+            color: hsl(100, 70%, 15%);
             border-radius: 16px;
             margin-top: 50px;
             position: relative;
@@ -570,8 +576,8 @@
             align-items: center;
             gap: 10px;
             padding: 18px 45px;
-            background: white;
-            color: #0891b2;
+            background: hsl(220, 15%, 15%);
+            color: hsl(100, 70%, 55%);
             text-decoration: none;
             border-radius: 12px;
             font-weight: 700;
@@ -580,11 +586,13 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
             position: relative;
             z-index: 1;
+            border: 2px solid hsl(100, 70%, 55%);
         }
 
         .cta-btn:hover {
             transform: scale(1.05);
             box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+            background: hsl(220, 15%, 10%);
         }
 
         footer {
@@ -998,18 +1006,18 @@
                     label: 'Improvement (%)',
                     data: [20, 25, 35, 45, 60],
                     backgroundColor: [
-                        'rgba(8, 145, 178, 0.85)',
-                        'rgba(6, 182, 212, 0.85)',
-                        'rgba(34, 211, 238, 0.85)',
-                        'rgba(14, 165, 233, 0.85)',
-                        'rgba(59, 130, 246, 0.85)'
+                        'rgba(143, 209, 79, 0.85)',
+                        'rgba(156, 217, 99, 0.85)',
+                        'rgba(169, 225, 119, 0.85)',
+                        'rgba(182, 233, 139, 0.85)',
+                        'rgba(195, 241, 159, 0.85)'
                     ],
                     borderColor: [
-                        'rgb(8, 145, 178)',
-                        'rgb(6, 182, 212)',
-                        'rgb(34, 211, 238)',
-                        'rgb(14, 165, 233)',
-                        'rgb(59, 130, 246)'
+                        'rgb(143, 209, 79)',
+                        'rgb(156, 217, 99)',
+                        'rgb(169, 225, 119)',
+                        'rgb(182, 233, 139)',
+                        'rgb(195, 241, 159)'
                     ],
                     borderWidth: 2,
                     borderRadius: 10
@@ -1064,16 +1072,16 @@
                 datasets: [{
                     data: [20, 95, 62, 85],
                     backgroundColor: [
-                        'rgba(8, 145, 178, 0.85)',
-                        'rgba(6, 182, 212, 0.85)',
-                        'rgba(34, 211, 238, 0.85)',
-                        'rgba(14, 165, 233, 0.85)'
+                        'rgba(143, 209, 79, 0.85)',
+                        'rgba(156, 217, 99, 0.85)',
+                        'rgba(169, 225, 119, 0.85)',
+                        'rgba(182, 233, 139, 0.85)'
                     ],
                     borderColor: [
-                        'rgb(8, 145, 178)',
-                        'rgb(6, 182, 212)',
-                        'rgb(34, 211, 238)',
-                        'rgb(14, 165, 233)'
+                        'rgb(143, 209, 79)',
+                        'rgb(156, 217, 99)',
+                        'rgb(169, 225, 119)',
+                        'rgb(182, 233, 139)'
                     ],
                     borderWidth: 3
                 }]
@@ -1114,13 +1122,13 @@
                     {
                         label: 'Cost Savings ($K)',
                         data: [25, 45, 75, 95, 125, 150],
-                        borderColor: 'rgb(8, 145, 178)',
-                        backgroundColor: 'rgba(8, 145, 178, 0.1)',
+                        borderColor: 'rgb(143, 209, 79)',
+                        backgroundColor: 'rgba(143, 209, 79, 0.1)',
                         borderWidth: 3,
                         fill: true,
                         tension: 0.4,
                         pointRadius: 5,
-                        pointBackgroundColor: 'rgb(8, 145, 178)',
+                        pointBackgroundColor: 'rgb(143, 209, 79)',
                         pointBorderColor: '#fff',
                         pointBorderWidth: 2,
                         pointHoverRadius: 7
@@ -1128,13 +1136,13 @@
                     {
                         label: 'Revenue Increase ($K)',
                         data: [10, 30, 50, 75, 100, 120],
-                        borderColor: 'rgb(34, 211, 238)',
-                        backgroundColor: 'rgba(34, 211, 238, 0.1)',
+                        borderColor: 'rgb(169, 225, 119)',
+                        backgroundColor: 'rgba(169, 225, 119, 0.1)',
                         borderWidth: 3,
                         fill: true,
                         tension: 0.4,
                         pointRadius: 5,
-                        pointBackgroundColor: 'rgb(34, 211, 238)',
+                        pointBackgroundColor: 'rgb(169, 225, 119)',
                         pointBorderColor: '#fff',
                         pointBorderWidth: 2,
                         pointHoverRadius: 7
@@ -1191,13 +1199,13 @@
                 datasets: [{
                     label: 'Proficiency Level',
                     data: [95, 85, 95, 92, 98, 90, 88, 90],
-                    backgroundColor: 'rgba(8, 145, 178, 0.2)',
-                    borderColor: 'rgb(8, 145, 178)',
+                    backgroundColor: 'rgba(143, 209, 79, 0.2)',
+                    borderColor: 'rgb(143, 209, 79)',
                     borderWidth: 3,
-                    pointBackgroundColor: 'rgb(8, 145, 178)',
+                    pointBackgroundColor: 'rgb(143, 209, 79)',
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgb(8, 145, 178)',
+                    pointHoverBorderColor: 'rgb(143, 209, 79)',
                     pointRadius: 5,
                     pointHoverRadius: 7,
                     pointBorderWidth: 2
@@ -1233,14 +1241,14 @@
                             font: { size: 11 }
                         },
                         grid: {
-                            color: 'rgba(8, 145, 178, 0.15)'
+                            color: 'rgba(143, 209, 79, 0.15)'
                         },
                         angleLines: {
-                            color: 'rgba(8, 145, 178, 0.15)'
+                            color: 'rgba(143, 209, 79, 0.15)'
                         },
                         pointLabels: {
                             font: { size: 12, weight: '600' },
-                            color: '#0891b2'
+                            color: 'rgb(143, 209, 79)'
                         }
                     }
                 }
