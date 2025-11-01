@@ -1051,7 +1051,9 @@
                         backgroundColor: 'rgba(0, 0, 0, 0.8)',
                         padding: 12,
                         titleFont: { size: 14, weight: 'bold' },
-                        bodyFont: { size: 13 }
+                        bodyFont: { size: 13 },
+                        titleColor: 'hsl(100, 70%, 55%)',
+                        bodyColor: 'hsl(220, 10%, 95%)'
                     }
                 },
                 scales: {
@@ -1062,18 +1064,20 @@
                             callback: function(value) {
                                 return value + '%';
                             },
-                            font: { size: 12 }
+                            font: { size: 12 },
+                            color: 'hsl(220, 10%, 70%)'
                         },
                         grid: {
-                            color: 'rgba(0, 0, 0, 0.05)'
+                            color: 'rgba(143, 209, 79, 0.1)'
                         }
                     },
                     x: {
+                        ticks: {
+                            font: { size: 11 },
+                            color: 'hsl(220, 10%, 70%)'
+                        },
                         grid: {
                             display: false
-                        },
-                        ticks: {
-                            font: { size: 11 }
                         }
                     }
                 }
@@ -1113,12 +1117,15 @@
                             padding: 15,
                             font: { size: 12 },
                             usePointStyle: true,
-                            pointStyle: 'circle'
+                            pointStyle: 'circle',
+                            color: 'hsl(220, 10%, 70%)'
                         }
                     },
                     tooltip: {
                         backgroundColor: 'rgba(0, 0, 0, 0.8)',
                         padding: 12,
+                        titleColor: 'hsl(100, 70%, 55%)',
+                        bodyColor: 'hsl(220, 10%, 95%)',
                         callbacks: {
                             label: function(context) {
                                 return context.label + ': ' + context.parsed + '%';
@@ -1176,14 +1183,17 @@
                             padding: 15,
                             font: { size: 12 },
                             usePointStyle: true,
-                            pointStyle: 'circle'
+                            pointStyle: 'circle',
+                            color: 'hsl(220, 10%, 70%)'
                         }
                     },
                     tooltip: {
                         backgroundColor: 'rgba(0, 0, 0, 0.8)',
                         padding: 12,
                         mode: 'index',
-                        intersect: false
+                        intersect: false,
+                        titleColor: 'hsl(100, 70%, 55%)',
+                        bodyColor: 'hsl(220, 10%, 95%)'
                     }
                 },
                 scales: {
@@ -1192,13 +1202,17 @@
                         ticks: {
                             callback: function(value) {
                                 return '$' + value + 'K';
-                            }
+                            },
+                            color: 'hsl(220, 10%, 70%)'
                         },
                         grid: {
-                            color: 'rgba(0, 0, 0, 0.05)'
+                            color: 'rgba(143, 209, 79, 0.1)'
                         }
                     },
                     x: {
+                        ticks: {
+                            color: 'hsl(220, 10%, 70%)'
+                        },
                         grid: {
                             display: false
                         }
@@ -1238,6 +1252,8 @@
                     tooltip: {
                         backgroundColor: 'rgba(0, 0, 0, 0.8)',
                         padding: 12,
+                        titleColor: 'hsl(100, 70%, 55%)',
+                        bodyColor: 'hsl(220, 10%, 95%)',
                         callbacks: {
                             label: function(context) {
                                 return 'Proficiency: ' + context.parsed.r + '%';
@@ -1255,7 +1271,8 @@
                                 return value + '%';
                             },
                             backdropColor: 'transparent',
-                            font: { size: 11 }
+                            font: { size: 11 },
+                            color: 'hsl(220, 10%, 70%)'
                         },
                         grid: {
                             color: 'rgba(143, 209, 79, 0.15)'
